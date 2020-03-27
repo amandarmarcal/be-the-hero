@@ -1,7 +1,7 @@
 // Update with your config settings.
 
 module.exports = {
-
+  
   development: {
     client: 'sqlite3',
     connection: {
@@ -12,6 +12,18 @@ module.exports = {
     }, 
     useNullAsDefault: true, //padrão das colunas de dados sempre null
   },
+  
+  test: {
+    client: 'sqlite3',
+    connection: {
+      filename: './src/database/test.sqlite'
+    },
+    migrations:{
+      directory: "./src/database/migrations"
+    }, 
+    useNullAsDefault: true, //padrão das colunas de dados sempre null
+  },
+
 
   staging: {
     client: 'postgresql',
@@ -43,6 +55,7 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations'
     }
-  }
+  },
+
 
 };
